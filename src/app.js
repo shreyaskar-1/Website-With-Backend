@@ -16,25 +16,23 @@ app.set("view engine", "hbs");
 app.set("views", template_path);
 hbs.registerPartials(partials_path);
 
+// Serve Bootstrap and jQuery files
+app.use('/css', express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
+app.use('/js', express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")));
+app.use('/jq', express.static(path.join(__dirname, "../node_modules/jquery/dist")));
 app.use(express.json());
 
+// Routing
+app.get("/", (req, res) => {
+    res.render("index");
+});
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+app.get("/contact", (req, res) => {
+    res.render("contact");
+});
 
-
-
-// routing
-app.get("/",(req,res)=>{
-    res.send("hello world");
-})
-
-
-
-
-
-
-
-
-
-
-app.listen(port,()=>{
-    console.log(`listent to you on port ${port} `);
-})
+app.listen(port, () => {
+    console.log(`Listening to you on port ${port}`);
+});
