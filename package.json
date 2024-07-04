@@ -12,10 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "express": "^4.19.2",
     "hbs": "^4.2.0",
     "jquery": "^3.7.1",
-    "mongoose": "^8.4.4"
+    "mongoose": "^8.4.4",
+    "validator": "^13.12.0"
   }
 }
